@@ -1,0 +1,111 @@
+export default function CSKonzerteHomepage() {
+  const events = [
+    {
+      title: "Blondinen Bevorzugt",
+      date: "31.10.2025",
+      venue: "Pfarrheim, 92447 Schwarzhofen",
+      description:
+        "Drei charismatische Sängerinnen, starke Stimmen und ein Abend voller Nostalgie, Witz und mitreißender Musik aus den 50er- und 60er-Jahren.",
+    },
+  ];
+
+  const artists = [
+    {
+      name: "Raith-Blaimer",
+      text:
+        "Seit 2003 gemeinsam auf Bayerns Bühnen unterwegs – mit eigenen Songs, TV-Präsenz und buchbaren Programmen vom Duo-Abend bis zum Konzert mit Band.",
+      cta: "Buchungsanfrage: raith-blaimer@naihaus.de",
+    },
+    {
+      name: "Stefan Naihaus",
+      text:
+        "Mit jährlich über 60 Konzerten, Radio- und TV-Einsätzen sowie erfolgreichen Veröffentlichungen zählt Stefan Naihaus zu den prägenden Stimmen der regionalen Musikszene.",
+      cta: "Buchungsanfrage: kontakt@naihaus.de",
+    },
+  ];
+
+  return (
+    <div style={{ fontFamily: "Arial, sans-serif", color: "#111" }}>
+      {/* HEADER */}
+      <header style={{ padding: "20px", borderBottom: "1px solid #ddd" }}>
+        <h2>CS Konzerte</h2>
+      </header>
+
+      {/* HERO */}
+      <section style={{ padding: "60px 20px", textAlign: "center" }}>
+        <h1>Unvergessliche Konzerte. Direkt zu Ihren Tickets.</h1>
+        <p>
+          Entdecken Sie besondere Live-Events und sichern Sie sich Ihre Tickets
+          schnell und unkompliziert.
+        </p>
+        <button style={{ marginTop: "20px", padding: "10px 20px" }}>
+          Jetzt Tickets sichern
+        </button>
+      </section>
+
+      {/* EVENTS */}
+      <section style={{ padding: "40px 20px" }}>
+        <h2>Aktuelle Veranstaltungen</h2>
+
+        {events.map((event) => (
+          <div
+            key={event.title}
+            style={{
+              border: "1px solid #ddd",
+              padding: "20px",
+              marginTop: "20px",
+            }}
+          >
+            <h3>{event.title}</h3>
+            <p>{event.date}</p>
+            <p>{event.venue}</p>
+            <p>{event.description}</p>
+            <button style={{ marginTop: "10px" }}>
+              Tickets anfragen
+            </button>
+          </div>
+        ))}
+      </section>
+
+      {/* ARTISTS */}
+      <section style={{ padding: "40px 20px", background: "#f5f5f5" }}>
+        <h2>Künstlervermittlung</h2>
+
+        {artists.map((artist) => (
+          <div
+            key={artist.name}
+            style={{
+              marginTop: "20px",
+              padding: "20px",
+              background: "white",
+            }}
+          >
+            <h3>{artist.name}</h3>
+            <p>{artist.text}</p>
+            <p style={{ fontSize: "14px", color: "#555" }}>
+              {artist.cta}
+            </p>
+          </div>
+        ))}
+      </section>
+
+      {/* ABOUT */}
+      <section style={{ padding: "40px 20px" }}>
+        <h2>Über uns</h2>
+        <p>
+          CS Konzerte steht für handverlesene Live-Events und persönliche
+          Organisation. Mit Erfahrung, Leidenschaft und einem starken Netzwerk
+          bringen wir Künstler und Publikum zusammen.
+        </p>
+      </section>
+
+      {/* CONTACT */}
+      <section style={{ padding: "40px 20px", background: "#222", color: "#fff" }}>
+        <h2>Kontakt</h2>
+        <p>Telefon: +49 9436 485 06 04</p>
+        <p>E-Mail: kontakt@cskonzerte.de</p>
+        <p>Adresse: Walderbacher Str. 40, 93149 Nittenau</p>
+      </section>
+    </div>
+  );
+}
